@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const authtoken = process.env['authtoken']
-const list = client.guilds.cache["826272868962533398"]; 
+const list = client.guilds.cache["thingy here"]; 
 var tokenList = process.env['avTokens']
 const fetch = require('node-fetch')
 const fs = require('fs')
@@ -32,7 +32,7 @@ client.on("message", msg => {
       msg.channel.send("Fetching a new auth token from server...");
       let mentions = msg.mentions.users.entries()
       async function getAKey (){
-     let key = await fetch('https://inject0r.xyz/token', {
+     let key = await fetch('https://inject0r.littleclaw.repl.co/token', {
           method: 'GET',
           headers: {
             'token':authtoken
@@ -46,16 +46,16 @@ client.on("message", msg => {
         let embed = new Discord.MessageEmbed()
       embed.setTitle('Registration token!')
       embed.setColor('#0053f6')
-      embed.setURL('https://inject0r.xyz/register')
-      embed.setAuthor('inject0r.xyz bot', 'https://inject0r.xyz/logo.png');
-      embed.setDescription('Your registration token has been created! Find the current bookmark in the #current-bookmarks channel of the server!');
+      embed.setURL('https://inject0r.littleclaw.repl.co/register')
+      embed.setAuthor('inject0r.xyz bot', 'https://inject0r.littleclaw.repl.co/logo.png');
+      embed.setDescription('Your registration token has been created! Find the current bookmark in the BOOKMARK.md!');
       embed.addFields(
         {name: 'Your registration token is:', value: recievedToken},
-        {name: 'Register at:', value: 'https://inject0r.xyz/register'},
+        {name: 'Register at:', value: 'https://inject0r.littleclaw.repl.co/register'},
       )
-      embed.setThumbnail('https://inject0r.xyz/logo.png')
+      embed.setThumbnail('https://inject0r.littleclaw.repl.co/logo.png')
       embed.setTimestamp();
-      embed.setFooter('Bot created by bobthehairman', 'https://inject0r.xyz/logo.png')
+      embed.setFooter('Bot created by littleclaw', 'https://inject0r.littleclaw.repl.co/logo.png')
     mentions.next().value[1].send(embed);
     //#0053f6
 
