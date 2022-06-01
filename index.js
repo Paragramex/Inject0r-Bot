@@ -92,7 +92,7 @@ res.writeHead(200, {
 		'Access-Control-Allow-Origin': '*'
 	});
 
-    res.write(fs.readFileSync('website.html', "utf8"))
+    res.write(fs.readFileSync('index.html', "utf8"))
     console.log(`${req.method} request recieved to site!`)
 	res.end();
 };
