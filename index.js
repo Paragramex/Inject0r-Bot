@@ -3,16 +3,19 @@ const { MessageEmbed } = require('discord.js');
 const client = new Discord.Client()
 const authtoken = process.env['authtoken']
 const list = client.guilds.cache["899479806415106058"];
-var tokenList = process.env['avTokens']
 const fetch = require('node-fetch')
 const fs = require('fs')
 const http = require('http')
 var prefix = "inj:"
+//application has started
 client.on("ready", () => {
 	console.log(`Logged in as ${client.user.tag}!`)
 })
 console.clear();
+
+//og code START
 client.on("message", msg => {
+	
 	if (msg.content.toLowerCase() == prefix.toLowerCase() + "logchannel") {
 		msg.channel.send("Channel logged to console.");
 		console.log(msg.channel)
@@ -133,8 +136,29 @@ client.on('message', message => {
 		message.delete({ timeout: 2000 });
 	}
 });
+//og code END
 
+//NEW CODE START
 
+client.on('guildMemberAdd', member => {
+  const embed = new Discord.MessageEmbed()
+    embed.setTitle('hello')
+						embed.setColor('')
+						embed.setURL('https://inject0r.littleclaw.repl.co/')
+						embed.setAuthor('hello2', 'https://inject0r.littleclaw.repl.co/logo.png');
+						embed.setDescription('Welcome to the inject0r server, ${member.user}\nYou are our ${member.guild.memberCount}th Member.');
+						embed.addFields(
+							{ name: 'Get inject0r by DMing @littleclaw'},
+							{ name: 'Register below at:', value: 'https://inject0r.littleclaw.repl.co/register' },
+						)
+						embed.setThumbnail('https://inject0r.littleclaw.repl.co/logo.png')
+						embed.setTimestamp();
+						embed.setFooter('ah yes, children so tasty', 'https://inject0r.littleclaw.repl.co/logo.png')
+						member.send(embed);
+})
+//NEW CODE END
+
+//DO NOT EDIT BELOW IDIOT
 client.login(authtoken)
 function requestListener(req, res) {
 	res.setHeader('Access-Control-Allow-Origin', '*');
