@@ -25,7 +25,7 @@ client.on("message", msg => {
 	} else if (msg.content.toLowerCase() == prefix.toLowerCase() + "welcome") {
 		if (JSON.parse(fs.readFileSync('info.json'))["admins"].includes(msg.author.id)) {
 
-			msg.channel.send("Hello, Im iຖวē¢t0r, the bot! my job is to interface with discord and allow my maker, littleclaw, the power to control his project from discord")
+			msg.channel.send("Hello, Im iຖวē¢t0r, the bot! my job is to interface with discord and allow my maker, paragram, the power to control his project from discord")
 
 		} else {
 			msg.channel.send("[inject0r] You are not an admin!")
@@ -39,7 +39,7 @@ client.on("message", msg => {
 				msg.channel.send("[inject0r] Fetching a new auth token from server...");
 				let mentions = msg.mentions.users.entries()
 				async function getAKey() {
-					let key = await fetch('https://inject0r.littleclaw.repl.co/token', {
+					let key = await fetch('https://inject0r.repl.co/token', {
 						method: 'GET',
 						headers: {
 							'token': authtoken
@@ -53,16 +53,16 @@ client.on("message", msg => {
 						let embed = new Discord.MessageEmbed()
 						embed.setTitle('Registration token!')
 						embed.setColor('#0053f6')
-						embed.setURL('https://inject0r.littleclaw.repl.co/register')
-						embed.setAuthor('Thanks For Joining Us At Inject0r', 'https://inject0r.littleclaw.repl.co/logo.png');
+						embed.setURL('https://inject0r.repl.co/register')
+						embed.setAuthor('Thanks For Joining Us At Inject0r', 'https://inject0r.repl.co/logo.png');
 						embed.setDescription('Your registration token has been created! Find the current bookmark when you register below.');
 						embed.addFields(
 							{ name: 'Your registration token is:', value: recievedToken },
-							{ name: 'Register at:', value: 'https://inject0r.littleclaw.repl.co/register' },
+							{ name: 'Register at:', value: 'https://inject0r.repl.co/register' },
 						)
-						embed.setThumbnail('https://inject0r.littleclaw.repl.co/logo.png')
+						embed.setThumbnail('https://inject0r.repl.co/logo.png')
 						embed.setTimestamp();
-						embed.setFooter('Bot created by littleclaw', 'https://inject0r.littleclaw.repl.co/logo.png')
+						embed.setFooter('Bot created by littleclaw', 'https://inject0r.repl.co/logo.png')
 						mentions.next().value[1].send(embed);
 						//#0053f6
 
@@ -88,7 +88,7 @@ client.on("message", msg => {
 				msg.channel.send("[inject0r] Fetching a new auth token from server...");
 				let mentions = msg.mentions.users.entries()
 				async function getAKey() {
-					let key = await fetch('https://inject0r.littleclaw.repl.co/token', {
+					let key = await fetch('https://inject0r.repl.co/token', {
 						method: 'GET',
 						headers: {
 							'token': authtoken
@@ -102,22 +102,22 @@ client.on("message", msg => {
 						let embed = new Discord.MessageEmbed()
 						embed.setTitle('Important message:')
 						embed.setColor('#f60014')
-						embed.setURL('https://inject0r.littleclaw.repl.co/')
-						embed.setAuthor('Hey, you have been selected to join a beta test!!', 'https://inject0r.littleclaw.repl.co/logo.png');
+						embed.setURL('https://inject0r.repl.co/')
+						embed.setAuthor('Hey, you have been selected to join a beta test!!', 'https://inject0r.repl.co/logo.png');
 						embed.setDescription('You have been selected as one of a chosen few to participate in a closed-beta testing of something littleclaw has made. If you wish to join, than take the registeration token below and go to the link at the bottom of this message. Sign up and start your exclusive beta-testing access!!!');
 						embed.addFields(
 							{ name: 'Your one time use registration token is:', value: recievedToken },
-							{ name: 'Register below at:', value: 'https://inject0r.littleclaw.repl.co/register' },
+							{ name: 'Register below at:', value: 'https://inject0r.repl.co/register' },
 						)
-						embed.setThumbnail('https://inject0r.littleclaw.repl.co/logo.png')
+						embed.setThumbnail('https://inject0r..repl.co/logo.png')
 						embed.setTimestamp();
-						embed.setFooter('who knows what the sniper monkeys think of...', 'https://inject0r.littleclaw.repl.co/logo.png')
+						embed.setFooter('who knows what the sniper monkeys think of...', 'https://inject0r.repl.co/logo.png')
 						mentions.next().value[1].send(embed);
 						//#0053f6
 
 						msg.channel.send("[inject0r] Recruit message and registration token successfully sent to target user!");
 					} catch (err) {
-						msg.channel.send("An error occured, and the message and token could not be sent. Error probally was logged to Console.");
+						msg.channel.send("An error occured, and the message and token could not be sent. Error probably was logged to Console.");
 						console.log(err);
 					}
 				});
@@ -144,16 +144,16 @@ client.on('guildMemberAdd', member => {
   const embed = new Discord.MessageEmbed()
     embed.setTitle('hello')
 						embed.setColor('')
-						embed.setURL('https://inject0r.littleclaw.repl.co/')
-						embed.setAuthor('hello2', 'https://inject0r.littleclaw.repl.co/logo.png');
+						embed.setURL('https://inject0r.repl.co/')
+						embed.setAuthor('hello2', 'https://inject0r.repl.co/logo.png');
 						embed.setDescription('Welcome to the inject0r server, ${member.user}\nYou are our ${member.guild.memberCount}th Member.');
 						embed.addFields(
 							{ name: 'Get inject0r by DMing @littleclaw'},
-							{ name: 'Register below at:', value: 'https://inject0r.littleclaw.repl.co/register' },
+							{ name: 'Register below at:', value: 'https://inject0r.repl.co/register' },
 						)
 						embed.setThumbnail('https://inject0r.littleclaw.repl.co/logo.png')
 						embed.setTimestamp();
-						embed.setFooter('ah yes, children so tasty', 'https://inject0r.littleclaw.repl.co/logo.png')
+						embed.setFooter('ah yes, children so tasty', 'https://inject0r.repl.co/logo.png')
 						member.send(embed);
 })
 //NEW CODE END
